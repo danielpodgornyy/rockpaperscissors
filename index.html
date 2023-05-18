@@ -3,9 +3,46 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
-        <link src = "index.css">
+        <link rel = "stylesheet" href = "./index-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <script src = "index.js"></script>
+        <!--
+        <div class = "start_container">
+            <div class = "title">
+                <h1>Rock Paper Scissors</h1>
+             </div>
+             <div class = "start_button">
+                 <button id = "start">Start</button>
+             </div>
+        </div>
+    -->
+        <div class = "game_container">
+            <div class = "choose_row">
+                <div class = "profiles">
+                    <div class = "human_prof">
+                        <div class = "hum_container">
+                            <img src = "imgs/humanIcon.png">
+                        </div>
+                        <p>0</p>
+                    </div>
+                    <div class = "comp_prof">
+                        <p>0</p>
+                        <div class = "comp">
+                            <img src = "imgs/Computer.png">
+                        </div>
+                    </div>
+                </div>
+                <h1>CHOOSE:</h1>
+            </div>
+            <div class = "selection_row">
+                <div>Hi</div>
+                <div>Hi</div>
+                <div>Hi</div>
+            </div>
+        </div>
+        <script src = "index-func.js"></script>
     </body>
 </html>

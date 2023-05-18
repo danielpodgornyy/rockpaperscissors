@@ -1,3 +1,17 @@
+function hideTitle()
+{
+    //create node references to the container and its two children (title and start button)
+    const start_container = document.querySelector('.start_container');
+    const title = document.querySelector('.title');
+    const start = document.querySelector('.start_button');
+
+    //remove them from the dom
+    start_container.removeChild(title);
+    start_container.removeChild(start);
+}
+
+
+
 function getComputerChoice()
 {
     let randomNum = Math.random();
@@ -55,22 +69,20 @@ function round(playerSelection, computerSelection)
 
 function game()
 {
+    /*
     let playerWinCounter = 0;
     let computerWinCounter = 0;
     let playerChoice;
 
-    for (i = 0; i < 5; i++)
+    playerChoice = prompt("Choose between rock, paper, & scissors");
+    console.log(round(playerChoice, getComputerChoice()));
+    if (round == "You win!")
     {
-        playerChoice = prompt("Choose between rock, paper, & scissors");
-        console.log(round(playerChoice, getComputerChoice()));
-        if (round == "You win!")
-        {
-            playerWinCounter++;
-        }
-        else if (round == "You lose!")
-        {
-            computerWinCounter++;
-        }
+        playerWinCounter++;
+    }
+    else if (round == "You lose!")
+    {
+        computerWinCounter++;
     }
 
     if (playerWinCounter > computerWinCounter)
@@ -81,6 +93,9 @@ function game()
     {
         console.log("You lost the game! GG")
     }
+    */
 }
 
+const start = document.querySelector('#start');
+start.addEventListener('click', hideTitle);
 game();
