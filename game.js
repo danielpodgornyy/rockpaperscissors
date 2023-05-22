@@ -9,16 +9,17 @@ start.addEventListener('click', () =>
 
 function removeTitle()
 {
-    //create node references to the container and its children
+    //create node references to the body and the start container
     let body = document.querySelector('body');
     let start_container = document.querySelector('.start_container');
 
-    //remove them from the dom
+    //remove start screen from the dom
     body.removeChild(start_container);
 }
 
 function generateGame()
 {
+    //create nodes for game gui
     let body = document.querySelector('body')
     let gameContainer = document.createElement('div');
     let chooseRow = document.createElement('div');
@@ -41,7 +42,7 @@ function generateGame()
     let scissorsIMG = document.createElement('img');
     let output = document.createElement('h1');
 
-
+    //add each nodes attribute
     gameContainer.classList.add('game_container');
     chooseRow.classList.add('choose_row');
     profiles.classList.add('profiles');
@@ -65,6 +66,7 @@ function generateGame()
     scissorsIMG.src = 'imgs/scissors.jpg';
     output.id = 'output'
 
+    //add nodes to dom
     body.appendChild(gameContainer);
     gameContainer.appendChild(chooseRow);
     chooseRow.appendChild(profiles);
@@ -93,6 +95,7 @@ function gameStart()
     let paper = document.querySelector('#Paper');
     let scissors = document.querySelector('#Scissors');
 
+    //wait until an option is selected
     rock.addEventListener('click', changeDOM);
     paper.addEventListener('click', changeDOM);
     scissors.addEventListener('click', changeDOM);
