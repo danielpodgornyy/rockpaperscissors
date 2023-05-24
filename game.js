@@ -104,7 +104,7 @@ function gameStart()
 
 function changeDOM(e)
 {
-    let playerScore = document.querySelector('#hum_score'); //Change to number
+    let playerScore = document.querySelector('#hum_score');
     let compScore = document.querySelector('#comp_score');
     let output = document.querySelector('#output');
     let card = e.currentTarget;
@@ -112,6 +112,7 @@ function changeDOM(e)
 
     let result = startRound(playerChoice,getComputerChoice());
     
+    //When the score is to be updated, it is converted back to a number, incremented, and finally put back into the score along with a message
     if (result == "You Win!")
     {
         let playerScoreNum = +playerScore.textContent;
@@ -132,14 +133,14 @@ function changeDOM(e)
         output.textContent = "It appears, it is a draw";
     }
     
+    //When a card is clicked on, it will be raised slightly and will hold for about 1500 ms
     card.style.cssText = 'margin-top: 0px; transition: 1s;';
     setTimeout(() => 
     {
         card.style.cssText = 'margin-top: ; transition: ; transition-timing-function:';
     }, 1500)
 
-    console.log(playerChoice);
-
+    //Once one of the two players reaches 5 points, the game ends
     if (playerScore.textContent == 5 || compScore.textContent == 5)
     {
         removeGame(playerScore.textContent);
@@ -149,9 +150,9 @@ function changeDOM(e)
     }
 }
 
+//takes in both the player and the computers answer and outputs the result
 function startRound(playerSelection, computerSelection)
 {
-    
     switch(true)
     {
         case playerSelection == "Rock" && computerSelection == "Rock":
@@ -194,25 +195,30 @@ function getComputerChoice()
 
 function removeGame(playerScore)
 {
+    //removes the game container
     let body = document.querySelector('body');
     let gameContainer = document.querySelector('.game_container')
     body.removeChild(gameContainer);
     
+    //creates elements for the ending screen
     let endContainer = document.createElement('div');
     let message = document.createElement('h1');
     let img = document.createElement('img');
     let playAgain = document.createElement('button');
 
+    //adds each elements attributes
     endContainer.classList.add('end_container')
     message.id = 'message';
     img.id = 'end_img';
     playAgain.id = 'play_again';
 
+    //adds elements to dom
     body.appendChild(endContainer);
     endContainer.appendChild(message);
     endContainer.appendChild(img);
     endContainer.appendChild(playAgain);
 
+    //if the player wins, the victory message is output, else the player was defeated
     if (playerScore == 5)
     {
         message.textContent = "Victory!"
